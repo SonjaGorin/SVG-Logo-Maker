@@ -40,7 +40,7 @@ function renderLogo(fileName, userInput) {
 
 function init() {
     inquirer.prompt(questions)
-    .then(userInput => renderLogo(userInput))
+    .then(userInput => renderLogo("SVG-logo-example.svg", userInput))
 };
 
 init();
