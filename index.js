@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs").promises;
-const renderShape = require("./lib/shapes.js");
+const renderShape = require("./lib/shapes.js").renderShape;
 const colorNames = require("./lib/color-names.js")
 
 const questions = [
