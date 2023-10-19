@@ -15,7 +15,7 @@ const questions = [
         name: "shapeColor",
         message: "What color do you want your logo shape to be? \nPlease enter color name or a hexadecimal number.",
         validate: userShapeColorInput => {
-            if (userShapeColorInput) {
+            if (colors.includes(userShapeColorInput.toLowerCase())) {
                 return true;
             } else {
                 console.log ("\nPlease enter a color name or color code.")
