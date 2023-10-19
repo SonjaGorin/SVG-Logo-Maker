@@ -15,10 +15,10 @@ const questions = [
         name: "shapeColor",
         message: "What color do you want your logo shape to be? \nPlease enter color name or a hexadecimal number.",
         validate: userShapeColorInput => {
-            if (colorNames.includes(userShapeColorInput.toLowerCase()) || userShapeColorInput.startsWith("#")) {
+            if (colorNames.includes(userShapeColorInput.toLowerCase()) || /^#[0-9A-F]{6}$/i.test(userShapeColorInput)) {
                 return true;
             } else {
-                console.log ("\nPlease enter a color name or color code.")
+                console.log ("Please enter a valid color name or color code.");
                 return false;
             }
         }
@@ -41,10 +41,10 @@ const questions = [
         name: "textColor",
         message: "What color do you want your logo text to be?  \nPlease enter color name or a hexadecimal number.",
         validate: userTextColorInput => {
-            if (colorNames.includes(userTextColorInput.toLowerCase()) || userTextColorInput.startsWith("#")) {
+            if (colorNames.includes(userTextColorInput.toLowerCase()) || /^#[0-9A-F]{6}$/i.test(userTextColorInput)) {
                 return true;
             } else {
-                console.log ("\nPlease enter a color name or color code.")
+                console.log ("Please enter a valid color name or color code.");
                 return false;
             }
         }
@@ -59,7 +59,7 @@ function renderLogo(fileName, userInput) {
         if (error) {
             return console.log(error);
     }
-    console.log("Generated logo.svg\nIf your logo doesn't look how you thought it would, please check if you entered valid color names and hexadecimal numbers.");
+    console.log("Generated logo.svg");
     })
 };
 
