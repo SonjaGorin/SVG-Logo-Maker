@@ -3,6 +3,7 @@ const fs = require("fs").promises;
 const renderShape = require("./lib/shapes.js").renderShape;
 const colorNames = require("./lib/color-names.js")
 
+// prompt questions for the user
 const questions = [
     {
         type: "list",
@@ -51,6 +52,7 @@ const questions = [
     }
 ];
 
+// function that calls renderShape function and writes its return value to a new file
 function renderLogo(fileName, userInput) {
     const destinationDir = "examples";
     const logoData = renderShape(userInput);
@@ -63,6 +65,7 @@ function renderLogo(fileName, userInput) {
     })
 };
 
+// function to initialize app
 function init() {
     inquirer.prompt(questions)
     .then(userInput => renderLogo("logo.svg", userInput))
