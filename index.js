@@ -12,17 +12,26 @@ const questions = [
     {
         type: "input",
         name: "shapeColor",
-        message: "What color do you want your logo shape to be?"
+        message: "What color do you want your logo shape to be? \nPlease enter color name or a hexadecimal number."
+        
     },
     {
         type: "input",
         name: "text",
-        message: "What text do you want written on your logo?"
+        message: "Please enter up to three characters for the logo text.",
+        validate: userTextInput => {
+            if (userTextInput.length < 4 && userTextInput.length > 0) {
+                return true;
+            } else {
+                console.log ("\nPlease enter UP TO THREE characters for the logo text.");
+                return false;
+            }
+        }
     },
     {
         type: "input",
         name: "textColor",
-        message: "What color do you want your logo text to be?"
+        message: "What color do you want your logo text to be?  \nPlease enter color name or a hexadecimal number."
     }
 ];
 
