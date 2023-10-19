@@ -18,7 +18,7 @@ const questions = [
             if (colorNames.includes(userShapeColorInput.toLowerCase()) || /^#[0-9A-F]{6}$/i.test(userShapeColorInput)) {
                 return true;
             } else {
-                console.log ("Please enter a valid color name or color code.");
+                console.log ("Color name or color code you entered is not valid.");
                 return false;
             }
         }
@@ -44,7 +44,7 @@ const questions = [
             if (colorNames.includes(userTextColorInput.toLowerCase()) || /^#[0-9A-F]{6}$/i.test(userTextColorInput)) {
                 return true;
             } else {
-                console.log ("Please enter a valid color name or color code.");
+                console.log ("Color name or color code you entered is not valid.");
                 return false;
             }
         }
@@ -65,7 +65,7 @@ function renderLogo(fileName, userInput) {
 
 function init() {
     inquirer.prompt(questions)
-    .then(userInput => renderLogo("SVG-logo-example.svg", userInput))
+    .then(userInput => renderLogo("logo.svg", userInput))
 };
 
 init();
