@@ -1,6 +1,6 @@
 
-        <svg version="1.1" width="400" height="400" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="225 50, 400 350, 50 350" fill="red"/>
-        <text x="225" y="300" font-size="100" text-anchor="middle" fill="blue">ASD</text>
+        <svg version="1.1" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="150" cy="150" r="125" fill="#a5s6d6" />
+        <text x="150" y="175" font-size="100" text-anchor="middle" fill="#i9i9i9">ZXC</text>
         </svg>
         

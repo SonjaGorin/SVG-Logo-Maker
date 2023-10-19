@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs").promises;
 const renderShape = require("./lib/shapes.js");
-const colors = require("./lib/colors.js")
+const colorNames = require("./lib/color-names.js")
 
 const questions = [
     {
@@ -15,7 +15,7 @@ const questions = [
         name: "shapeColor",
         message: "What color do you want your logo shape to be? \nPlease enter color name or a hexadecimal number.",
         validate: userShapeColorInput => {
-            if (colors.includes(userShapeColorInput.toLowerCase())) {
+            if (colorNames.includes(userShapeColorInput.toLowerCase()) || userShapeColorInput.startsWith("#")) {
                 return true;
             } else {
                 console.log ("\nPlease enter a color name or color code.")
@@ -41,7 +41,7 @@ const questions = [
         name: "textColor",
         message: "What color do you want your logo text to be?  \nPlease enter color name or a hexadecimal number.",
         validate: userTextColorInput => {
-            if (userTextColorInput) {
+            if (colorNames.includes(userTextColorInput.toLowerCase()) || userTextColorInput.startsWith("#")) {
                 return true;
             } else {
                 console.log ("\nPlease enter a color name or color code.")
